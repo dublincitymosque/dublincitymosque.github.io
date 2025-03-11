@@ -1,0 +1,20 @@
+body {
+    background: url('mosque-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.highlight {
+    background: gold !important;
+    color: black !important;
+    font-weight: bold;
+}
+
+.highlight-row {
+    background-color: rgba(255, 217, 0, 0.363) !important;
+    color: black !important;
+    font-weight: bold;
+}
+
+.highlight-row td {
+    background-color: rgba(255, 217, 0, 0.363) !important;
+}
