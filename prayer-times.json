@@ -1,7 +1,39 @@
 {
     "March": {
-        "11": { "Fajr": "05:10 AM", "Dhuhr": "12:30 PM", "Asr": "04:45 PM", "Maghrib": "06:30 PM", "Isha": "09:47 PM" },
-        "12": { "Fajr": "05:09 AM", "Dhuhr": "12:31 PM", "Asr": "04:46 PM", "Maghrib": "06:31 PM", "Isha": "08:01 PM" },
-        "13": { "Fajr": "05:08 AM", "Dhuhr": "12:32 PM", "Asr": "04:47 PM", "Maghrib": "06:32 PM", "Isha": "08:02 PM" }
+        "11": {
+            "Fajr": { "Adhan": "05:10 AM", "Iqamaah": "05:30 AM" },
+            "Dhuhr": { "Adhan": "12:30 PM", "Iqamaah": "12:45 PM" },
+            "Asr": { "Adhan": "04:45 PM", "Iqamaah": "05:00 PM" },
+            "Maghrib": { "Adhan": "06:30 PM", "Iqamaah": "06:40 PM" },
+            "Isha": { "Adhan": "08:00 PM", "Iqamaah": "10:53 PM" }
+        },
+        "12": {
+            "Fajr": { "Adhan": "05:06 AM", "Iqamaah": "05:21 AM" },
+            "Dhuhr": { "Adhan": "12:37 PM", "Iqamaah": "01:00 PM" },
+            "Asr": { "Adhan": "04:28 PM", "Iqamaah": "04:45 PM" },
+            "Maghrib": { "Adhan": "06:26 PM", "Iqamaah": "06:36 PM" },
+            "Isha": { "Adhan": "07:54 PM", "Iqamaah": "08:30 PM" }
+        },
+        "13": {
+            "Fajr": { "Adhan": "05:04 AM", "Iqamaah": "05:19 AM" },
+            "Dhuhr": { "Adhan": "12:37 PM", "Iqamaah": "01:00 PM" },
+            "Asr": { "Adhan": "04:29 PM", "Iqamaah": "04:45 PM" },
+            "Maghrib": { "Adhan": "06:28 PM", "Iqamaah": "06:38 PM" },
+            "Isha": { "Adhan": "07:56 PM", "Iqamaah": "08:30 PM" }
+        },
+        "14": {
+            "Fajr": { "Adhan": "05:01 AM", "Iqamaah": "05:16 AM" },
+            "Dhuhr": { "Adhan": "12:37 PM", "Iqamaah": "01:00 PM" },
+            "Asr": { "Adhan": "04:31 PM", "Iqamaah": "05:00 PM" },
+            "Maghrib": { "Adhan": "06:30 PM", "Iqamaah": "06:40 PM" },
+            "Isha": { "Adhan": "07:58 PM", "Iqamaah": "09:00 PM" }
+        },
+        "15": {
+            "Fajr": { "Adhan": "04:59 AM", "Iqamaah": "05:14 AM" },
+            "Dhuhr": { "Adhan": "12:36 PM", "Iqamaah": "01:00 PM" },
+            "Asr": { "Adhan": "04:32 PM", "Iqamaah": "05:00 PM" },
+            "Maghrib": { "Adhan": "06:32 PM", "Iqamaah": "06:42 PM" },
+            "Isha": { "Adhan": "08:00 PM", "Iqamaah": "09:00 PM" }
+        }
     }
 }

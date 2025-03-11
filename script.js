@@ -22,8 +22,10 @@ function updatePrayerTable(prayerTimes) {
 
     prayerIds.forEach(prayer => {
         let row = document.getElementById(prayer);
-        if (row) {
-            row.cells[1].innerText = prayerTimes[prayer.charAt(0).toUpperCase() + prayer.slice(1)];
+        if (row && prayerTimes[prayer.charAt(0).toUpperCase() + prayer.slice(1)]) {
+            let prayerData = prayerTimes[prayer.charAt(0).toUpperCase() + prayer.slice(1)];
+            row.cells[1].innerText = prayerData.Adhan;
+            row.cells[2].innerText = prayerData.Iqamaah;
         }
     });
 }
@@ -49,12 +51,11 @@ function highlightPrayerTime(currentTime) {
     let rows = document.querySelectorAll("table tbody tr");
 
     rows.forEach(row => {
-        let prayerTime = row.cells[1].innerText.trim();
+        let iqamaahTime = row.cells[2].innerText.trim(); // Use Iqamaah time for highlighting
         
-        // Only proceed if prayerTime exists and is valid
-        if (prayerTime) {
-            let formattedPrayerTime = convertTo12HourFormat(prayerTime);
-            row.classList.toggle("highlight-row", formattedPrayerTime === currentTime);
+        if (iqamaahTime) {
+            let formattedIqamaahTime = convertTo12HourFormat(iqamaahTime);
+            row.classList.toggle("highlight-row", formattedIqamaahTime === currentTime);
         }
     });
 }
@@ -77,6 +78,35 @@ function convertTo12HourFormat(timeString) {
     return `${hours}:${minutes} ${period}`;
 }
 
+function updateDate() {
+    let today = new Date();
+    let options = { year: 'numeric', month: 'long', day: 'numeric' };
+    let formattedDate = today.toLocaleDateString('en-US', options);
+    document.getElementById("date").innerText = `${formattedDate}`;
+}
+
+async function updateIslamicDate() {
+    try {
+        let today = new Date();
+        let day = today.getDate();
+        let month = today.getMonth() + 1;
+        let year = today.getFullYear();
+
+        let response = await fetch(`https://api.aladhan.com/v1/gToH?date=${day}-${month}-${year}`);
+        let data = await response.json();
+
+        if (data.data && data.data.hijri) {
+            let hijriDate = data.data.hijri;
+            let islamicDateString = `${hijriDate.day} ${hijriDate.month.en} ${hijriDate.year} AH`;
+            document.getElementById("islamic-date").innerText = `${islamicDateString}`;
+        }
+    } catch (error) {
+        console.error("Error fetching Islamic date:", error);
+    }
+}
+
 setInterval(updateClock, 1000);
 updateClock();
 loadPrayerTimes();
+updateDate();
+updateIslamicDate();
